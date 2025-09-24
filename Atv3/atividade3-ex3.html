@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Animação com Animate.css</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --animate-duration: 1.5s;
+            --animate-delay: 0s;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loader {
+            display: flex;
+            align-items: center; 
+            width: 100px;
+            height: 100px;
+            border: 2px solid gray;
+            position: relative; 
+        }
+
+        .loader div {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            animation-play-state: paused;
+        }
+
+        #bit1 {
+            background-color: lightgray;
+            --animate-delay: 0.3s;
+        }
+
+        #bit2 {
+            background-color: gray;
+            --animate-delay: 0.15s;
+        }
+
+        #bit3 {
+            background-color: black;
+            --animate-delay: 0s;
+        }
+
+        .loader:hover div {
+            animation-play-state: running;
+        }
+
+        .animate__slideInLeft {
+            --animate-duration: 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div id="bit1" class="animate__animated animate__slideInLeft animate__infinite"></div>
+        <div id="bit2" class="animate__animated animate__slideInLeft animate__infinite"></div>
+        <div id="bit3" class="animate__animated animate__slideInLeft animate__infinite"></div>
+    </div>
+</body>
+</html>

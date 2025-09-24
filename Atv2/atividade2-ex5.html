@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goblin - Animação 3 Frames</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2c3e50;
+            margin: 0;
+        }
+
+        .quadrant {
+            width: 400px;
+            height: 400px;
+            border: 2px dashed #ecf0f1;
+            position: relative;
+        }
+
+        /* DIV EXTERNO: Responsável apenas pelo MOVIMENTO SUAVE */
+        #goblin {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            animation: move-around 8s linear infinite;
+        }
+
+        /* DIV INTERNO: Responsável apenas pela IMAGEM (SPRITE) */
+        .sprite {
+            width: 100%;
+            height: 100%;
+            background-image: url('goblin_big.png');
+            background-size: 240px 320px;
+            
+            animation:
+                /* MUDANÇA AQUI: Duração para 0.9s e steps(3) */
+                walk-cycle 0.9s steps(3) infinite,
+                change-direction 8s steps(1) infinite;
+        }
+
+        /* Animação do MOVIMENTO (top/left) - SEM ALTERAÇÃO */
+        @keyframes move-around {
+            0%    { top: 0;   left: 0; }
+            25%   { top: 320px; left: 0; }
+            50%   { top: 320px; left: 320px; }
+            75%   { top: 0;   left: 320px; }
+            100%  { top: 0;   left: 0; }
+        }
+
+        /* Animação dos PASSOS (background-position-x) */
+        /* MUDANÇA AQUI: Percorre 240px para cobrir os 3 frames */
+        @keyframes walk-cycle {
+           100% { background-position-x: -240px; }
+        }
+        
+        /* Animação da DIREÇÃO (background-position-y) - SEM ALTERAÇÃO */
+        @keyframes change-direction {
+            0%    { background-position-y: 0px; }    /* BAIXO */
+            25%   { background-position-y: -160px; } /* DIREITA (usando sprite de CIMA) */
+            50%   { background-position-y: -80px; }  /* CIMA (usando sprite de DIREITA) */
+            75%   { background-position-y: -240px; } /* ESQUERDA */
+            100%  { background-position-y: 0px; }    /* BAIXO */
+        }
+    </style>
+</head>
+<body>
+
+<div class="quadrant">
+    <div id="goblin">
+        <div class="sprite"></div>
+    </div>
+</div>
+
+</body>
+</html>

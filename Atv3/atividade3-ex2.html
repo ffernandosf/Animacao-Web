@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader com Hover - Animate.css</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --animate-duration: 1s;
+            --animate-repeat: infinite;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 150px;
+            height: 150px;
+            border: 2px dotted #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 5px solid #E0E0E0;
+            border-top-color: #3498db;
+            animation-play-state: paused;
+        }
+
+        .container:hover .loader {
+            animation-play-state: running;
+        }
+
+        .animate__pulse {
+            --animate-duration: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loader animate__animated animate__rotateIn animate__infinite animate__pulse"></div>
+    </div>
+</body>
+</html>

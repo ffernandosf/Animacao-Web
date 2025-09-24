@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Bar com Animate.css</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --animate-duration: 2s;
+            --animate-delay: 0.5s;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .load-bar-container {
+            width: 300px;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .load-bar {
+            width: 0%;
+            height: 100%;
+            background-color: red;
+            border-radius: 2px;
+            animation-play-state: paused;
+        }
+
+        .load-bar-container:hover .load-bar {
+            animation-play-state: running;
+        }
+
+        .animate__slideInLeft {
+            --animate-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        .animate__slideInLeft.load-bar {
+            transform-origin: left;
+            animation-name: slideInLeft;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                width: 0%;
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+            to {
+                width: 100%;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="load-bar-container">
+        <div class="load-bar animate__animated animate__slideInLeft"></div>
+    </div>
+</body>
+</html>

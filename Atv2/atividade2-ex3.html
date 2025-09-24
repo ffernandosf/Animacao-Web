@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Animação Corrigida</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loader {
+            display: flex;
+            align-items: center; 
+            width: 100px;
+            height: 100px;
+            border: 2px solid gray;
+            position: relative; 
+        }
+
+        .loader div {
+            width: 25px;
+            height: 25px;
+            position: absolute; 
+            
+
+            animation-name: bounce;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-play-state: paused;
+        }
+
+        
+        #bit1 {
+            background-color: lightgray;
+            animation-delay: 0.3s;
+        }
+
+        #bit2 {
+            background-color: gray;
+            animation-delay: 0.15s;
+        }
+
+        #bit3 {
+            background-color: black;
+            animation-delay: 0s;
+        }
+
+       
+        .loader:hover div {
+            animation-play-state: running;
+        }
+
+        /* Animação única que vai de uma ponta à outra */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(0px); /* Posição inicial (esquerda) */
+            }
+            50% {
+                /* Posição final (direita) */
+                /* 100px (largura do container) - 25px (largura do bit) = 75px de movimento */
+                transform: translateX(75px); 
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="loader">
+    <div id="bit1"></div>
+    <div id="bit2"></div>
+    <div id="bit3"></div>
+</div>
+
+</body>
+</html>

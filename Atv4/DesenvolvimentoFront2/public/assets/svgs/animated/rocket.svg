@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .flame { animation: flicker 0.2s infinite alternate; }
+    @keyframes flicker {
+      0% { opacity: 0.8; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+  </style>
+  <!-- Flame -->
+  <path class="flame" d="M256 460C256 460 210 400 210 350H302C302 400 256 460 256 460Z" fill="#FFA500"/>
+  <path class="flame" d="M256 440C256 440 230 400 230 360H282C282 400 256 440 256 440Z" fill="#FFFF00"/>
+  
+  <!-- Fins -->
+  <path d="M140 370L140 280L210 250V350L140 370Z" fill="#D32F2F"/>
+  <path d="M372 370L372 280L302 250V350L372 370Z" fill="#D32F2F"/>
+  
+  <!-- Body -->
+  <path d="M256 60C256 60 180 160 180 260V350H332V260C332 160 256 60 256 60Z" fill="#E0E0E0" stroke="#333" stroke-width="4"/>
+  
+  <!-- Window -->
+  <circle cx="256" cy="200" r="35" fill="#29B6F6" stroke="#333" stroke-width="4"/>
+</svg>

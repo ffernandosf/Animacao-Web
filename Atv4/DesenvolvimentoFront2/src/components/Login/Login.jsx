@@ -42,8 +42,36 @@ const Login = () => {
       justifyContent: 'center',
       alignItems: 'center',
       minHeight: '100vh',
-      backgroundColor: '#f5f5f5'
+      backgroundColor: '#f5f5f5',
+      position: 'relative',
+      overflow: 'hidden' // Contain the rocket
     }}>
+      {/* Rocket Animation Container */}
+      {/* Rocket Animation Container */}
+      <div style={{
+        position: 'absolute',
+        top: '20%', // Move even higher up
+        marginTop: '-150px',
+        left: '-300px',
+        width: '300px',
+        height: '300px',
+        animation: 'flyAcross 8s linear infinite',
+        pointerEvents: 'none',
+        zIndex: 10 // Force on top
+      }}>
+        <style>{`
+          @keyframes flyAcross {
+            from { transform: translateX(0) rotate(90deg); }
+            to { transform: translateX(calc(100vw + 400px)) rotate(90deg); }
+          }
+        `}</style>
+        <img
+          src={`/assets/svgs/animated/rocket.svg?v=${Date.now()}`} // Force cache refresh
+          alt="Rocket Animation"
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      </div>
+
       <div ref={formRef} style={{
         backgroundColor: 'white',
         padding: '40px',
@@ -51,7 +79,9 @@ const Login = () => {
         boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
         width: '100%',
         maxWidth: '400px',
-        opacity: 0 // Start hidden for animation
+        opacity: 0, // Start hidden for animation
+        position: 'relative',
+        zIndex: 1
       }}>
         <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Login</h1>
         <form onSubmit={handleSubmit}>

@@ -1,0 +1,147 @@
+.slider-container {
+    height: 650px;
+    /* Aumentado para caber os botões */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    /* Permitir que elementos passem se necessário */
+    position: relative;
+    padding: 2rem 0;
+}
+
+.swiper_container {
+    height: 580px;
+    /* Aumentado */
+    padding: 2rem 0 4rem 0;
+    /* Mais padding embaixo */
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.swiper-slide {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.slide-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    text-align: center;
+    transform: translateY(100px);
+    /* Esconde inicialmente */
+    transition: transform 0.5s ease;
+}
+
+.swiper-slide-active .slide-text {
+    transform: translateY(0);
+    /* Mostra no slide ativo */
+}
+
+.slide-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-text p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.slider-controler {
+    position: relative;
+    bottom: 2rem;
+    /* Subir um pouco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 100;
+    margin-top: 3rem;
+    pointer-events: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: #343a40;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* Garantir cursor de clique */
+    display: flex;
+    /* Centralizar SVG */
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    z-index: 101;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+    pointer-events: none;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none;
+    /* Remover setas padrão do Swiper se existirem */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #61dafb;
+    color: white;
+    transform: scale(1.1);
+}
+
+.swiper-pagination {
+    position: relative;
+    bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #61dafb;
+    width: 25px;
+    border-radius: 5px;
+}

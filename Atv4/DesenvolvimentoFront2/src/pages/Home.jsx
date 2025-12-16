@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useApi } from '../context/ApiContext';
 import anime from 'animejs';
+import ImageSlider from '../components/Slider/ImageSlider';
 
 const Home = () => {
   const { loading, error, getUsers, updateUser, deleteUser } = useApi();
@@ -164,6 +165,11 @@ const Home = () => {
         marginBottom: '40px',
         color: '#666'
       }}>Bem-vindo ao painel EcoWATT!</p>
+
+      {/* Featured Slider */}
+      <div style={{ marginBottom: '40px' }}>
+        <ImageSlider />
+      </div>
 
       <div style={{
         backgroundColor: '#f8f9fa',

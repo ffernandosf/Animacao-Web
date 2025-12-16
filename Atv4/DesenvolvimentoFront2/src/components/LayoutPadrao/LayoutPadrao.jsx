@@ -79,6 +79,19 @@ const LayoutPadrao = () => {
             >
               Adicionar
             </Link>
+            <Link
+              to="/3d"
+              style={{
+                color: 'white',
+                textDecoration: 'none',
+                marginRight: '15px',
+                padding: '8px 12px',
+                borderRadius: '4px',
+                backgroundColor: 'rgba(255,255,255,0.1)'
+              }}
+            >
+              3D
+            </Link>
             <button
               onClick={handleLogout}
               style={{

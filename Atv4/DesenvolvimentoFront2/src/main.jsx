@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Perfil from './pages/Perfil';
 import AdicionarUsuario from './pages/AdicionarUsuario';
 import LayoutPadrao from './components/LayoutPadrao/LayoutPadrao';
+import Page3D from './pages/Page3D';
 import { ApiProvider } from './context/ApiContext';
 import { AuthProvider } from './context/AuthContext';
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/adicionar',
         element: <AdicionarUsuario />,
+      },
+      {
+        path: '/3d',
+        element: <Page3D />,
       },
     ],
   },
